@@ -1,0 +1,100 @@
+body{
+    background: #333;
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+    font-weight: bold;
+    overflow:hidden;
+}
+#number{
+    transition: all 1.5s;
+}
+#number:hover{
+    font-size: 40px;
+}
+.grid{
+    height: 100vh;
+    /* width: 100vw; */
+    display: grid;
+    grid-template-columns: repeat(3, 2fr) 1fr;
+    grid-template-areas: "header header header header"
+                         "btn1   btn2   btn3   ravn"
+                         "btn1   btn2   btn3   del"
+                         "btn4   btn5   btn6   sum"
+                         "btn4   btn5   btn6   vich"
+                         "btn7   btn8   btn9   delen"
+                         "btn7   btn8   btn9   umn"
+                         "btn0   btn0   btn0   btn0";
+    grid-template-rows: minmax(200px,4fr) repeat(6, 1fr);
+    /* grid-gap: 2px; */
+}
+.item-1{    grid-area: header;}
+.item-2{    grid-area: btn1;}
+.item-3{    grid-area: btn2;}
+.item-4{    grid-area: btn3;}
+.item-5{    grid-area: btn4;}
+.item-6{    grid-area: btn5;}
+.item-7{    grid-area: btn6;}
+.item-8{    grid-area: btn7;}
+.item-9{    grid-area: btn8;}
+.item-10{    grid-area: btn9;}
+.item-11{    grid-area: sum;}
+.item-12{    grid-area: vich;}
+.item-13{    grid-area: delen;}
+.item-14{    grid-area: umn;}
+.item-15{    grid-area: del;}
+.item-16{    grid-area: ravn;}
+.item-0{    grid-area: btn0;}
+
+.grid-item{
+    padding: 10px;
+    background: #333;
+    padding: 20px;
+    color: #555;
+    transition: all 1s 0.1s;
+}
+.grid-item:nth-child(n+2){
+    font-size: 20px;
+}
+.grid-item:nth-child(n+2):hover{
+    background-color: #555;
+    color: #333;
+
+    transform: scale(0.9, 0.9);
+}
+.grid-item:nth-child(n+2):active{
+    transform: scale(0.8, 0.8);
+    transition: transform 0.2s;
+}
+.grid-item:first-child{
+    display: flex;
+    padding: 10px;
+    padding-right: 15px;
+    color: aliceblue;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+    background: linear-gradient(45deg, #232526, #414345);
+    animation: gradient 10S ease infinite;
+    background-size: 400% 400%;
+}
+
+.grid-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+@keyframes gradient{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
